@@ -39,7 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.passwordParameter("password").defaultSuccessUrl("/user").and().logout()
 				.logoutUrl("/j_spring_security_logout").logoutSuccessUrl("/login?message=logout").and()
 				.exceptionHandling().accessDeniedPage("/403").and();
+		
 		http.csrf().disable().authorizeRequests().and();
+		
+		http.authorizeRequests().antMatchers("/api/v1/web/admin/**").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/api/v1/web/user/**").access("hasRole('ROLE_USER')").and();
 	}
 
 }

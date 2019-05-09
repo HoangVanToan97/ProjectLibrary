@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/admin.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/lib/data_table/datatables.js"></script>
+	<script type="text/javascript" src="/js/lib/data_table/datatables.min.js"></script>
+	<script type="text/javascript" src="/js/admin.js"></script>
+<title>Admin</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Welcome to Admin!</h1>
+		<a href="/user">User Page</a>
+		<form th:action="@{/j_spring_security_logout}" method="post">
+			<button class="btn btn-sm btn-primary">Logout</button>
+		</form>
+	</div>
+	<div align="center" style="width: 50%; text-align:center; margin-left: 25%; margin-top: 3%;">
+		<table class="table table-sm" id="content_table">
+			<thead class="thead-dark">
+			<tr>
+			    <th style="width: 5%;"><input type="checkbox"></th>
+				<th style="width: 30%;">Username</th>
+				<th style="width: 30%;">Role</th>
+				<th style="width: 5%;">Enabled</th>
+				<th style="width: 30%;">Action</th>
+			</tr>
+			</thead>
+		</table>
+	</div>
+</body>
+</html>
