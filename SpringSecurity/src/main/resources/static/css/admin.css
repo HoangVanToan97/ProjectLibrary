@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+#content_table_length label:before{
+	content: "";
+}
 #content_table_info{
 	display: none;
 }
