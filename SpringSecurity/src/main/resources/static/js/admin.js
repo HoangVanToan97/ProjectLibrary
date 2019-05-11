@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	var idAdmin = $("#idAdmin").val();
+	console.log(idAdmin);
 		   var columnDefinitions = [
 		    	{
 		    		"data":"id",
@@ -50,4 +52,6 @@ $(document).ready(function(){
 		        ]
 
 		    });
+		   $("#notification").attr("href", "http://localhost:8080/admin/"+idAdmin+"/notification");
+		   
 	   })

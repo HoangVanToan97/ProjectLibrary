@@ -22,6 +22,10 @@ public class UserService {
 		return userRepository.findById(id);
 	}
 	
+	public UserEntity searchByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
+	
 	public List<UserEntity> getList(){
 		return userRepository.findAll();
 	}

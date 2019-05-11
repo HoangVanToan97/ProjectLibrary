@@ -1,7 +1,11 @@
 @charset "UTF-8";
-#content_table_length label:before{
-	content: "";
+#content_table_length{
+	color:transparent;
 }
 #content_table_info{
 	display: none;
+}
+
+input checkbox{
+	padding-left:15px;
 }

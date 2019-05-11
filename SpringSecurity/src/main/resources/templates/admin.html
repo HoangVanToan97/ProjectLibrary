@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="https://www.thymeleaf.org"
+	layout:decorate="~{admin}">
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -14,10 +15,11 @@
 <body>
 	<div align="center">
 		<h1>Welcome to Admin!</h1>
-		<a href="/user">User Page</a>
+		<a href="/user/home">User Page</a>
 		<form th:action="@{/j_spring_security_logout}" method="post">
 			<button class="btn btn-sm btn-primary">Logout</button>
 		</form>
+		<a id="notification" class="btn btn-sm btn-primary">Notification</a>
 	</div>
 	<div align="center" style="width: 50%; text-align:center; margin-left: 25%; margin-top: 3%;">
 		<table class="table table-sm" id="content_table">
@@ -32,5 +34,6 @@
 			</thead>
 		</table>
 	</div>
+	<input hidden="hidden" id="idAdmin" th:value="${idAdmin}" />
 </body>
 </html>
