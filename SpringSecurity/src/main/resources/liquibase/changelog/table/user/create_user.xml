@@ -16,6 +16,7 @@
             <column name="password" type="VARCHAR(255)"/>
             <column name="role" type="varchar(50)"></column>
             <column name="enabled" type="INT"></column>
+            <column name="auth_id" type="VARCHAR(50)"></column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

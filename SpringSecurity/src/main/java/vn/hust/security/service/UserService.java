@@ -29,5 +29,13 @@ public class UserService {
 	public List<UserEntity> getList(){
 		return userRepository.findAll();
 	}
+	
+	public UserEntity findByAuthId(String authId) {
+		return userRepository.findByAuthId(authId);
+	}
+	
+	public String getAuthId(String username) {
+		return userRepository.findByUsername(username).getAuthId();
+	}
 
 }

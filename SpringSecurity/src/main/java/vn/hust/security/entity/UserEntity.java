@@ -16,6 +16,15 @@ public class UserEntity {
 	private String password;
 	private String role;
 	private int enabled;
+	private String authId;
+
+	public String getAuthId() {
+		return authId;
+	}
+
+	public void setAuthId(String authId) {
+		this.authId = authId;
+	}
 
 	public Long getId() {
 		return id;
@@ -56,13 +65,14 @@ public class UserEntity {
 	public void setEnabled(int enabled) {
 		this.enabled = enabled;
 	}
-
-	public UserEntity(String username, String password, String role, int enabled) {
+	
+	public UserEntity(String username, String password, String role, int enabled, String authId) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.role = role;
 		this.enabled = enabled;
+		this.authId = authId;
 	}
 
 	public UserEntity() {

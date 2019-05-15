@@ -17,14 +17,14 @@ public class AppController {
 	private UserService userService;
 	
 	@GetMapping({"/", "/login"})
-	public String showHome() {
+	public String showLogin() {
 		return "login";
 	}
 	
 	@GetMapping("/admin/home")
 	public String showAdmin(Model model, Principal principal) {
 		model.addAttribute("name", principal.getName());
-		model.addAttribute("idAdmin", userService.searchByUsername(principal.getName()).getId());
+		model.addAttribute("idAdmin", userService.getAuthId(principal.getName()));
 		return "admin";
 	}
 	
@@ -53,5 +53,6 @@ public class AppController {
 	public String showSearch() {
 		return "search";
 	}
+	
 
 }

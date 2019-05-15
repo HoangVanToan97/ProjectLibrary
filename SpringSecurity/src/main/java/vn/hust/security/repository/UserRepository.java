@@ -16,8 +16,8 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 	
 	List<UserEntity> findAll();
 	
+	UserEntity findByAuthId(String authId);
+	
 	@Query("from UserEntity u where u.id = ?1")
 	UserEntity checkUser(Long id);
-
-
 }

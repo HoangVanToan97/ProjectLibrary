@@ -10,11 +10,15 @@ public class PreauthorizeUser {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public boolean authorize(Long id) {
-		if(userRepository.checkUser(id).getUsername().isEmpty() || userRepository.checkUser(id).getUsername() == null) {
+	public boolean authorize(String id) {
+		try {
+			if(userRepository.findByAuthId(id).getUsername().isEmpty()) {
+				return false;
+			}else {
+				return true;
+			}
+		} catch (Exception e) {
 			return false;
-		}else {
-			return true;
 		}
 	}
 
