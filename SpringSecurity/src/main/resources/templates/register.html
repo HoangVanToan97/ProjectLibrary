@@ -15,15 +15,19 @@
 					"username" : username,
 					"password" : password
 				}
-				console.log(user);
 				$.ajax({
-					url : 'api/v1/web/addUser',
 					type : "POST",
+					contentType : "application/json",
+					url : 'api/v1/web/addUser',
 					data : JSON.stringify(user),
-					contentType : "application/json; charset=utf-8",
-					dataType : "json",
+					error : function(xhr, ajaxOptions,
+							thrownError) {
+					},
 					success : function(data) {
-						alert("Add Success!");
+						alert("Success!");
+						setTimeout(function() {
+							window.location.href = 'http://localhost:8080';
+						}, 1200);	
 					}
 				})
 			} else {

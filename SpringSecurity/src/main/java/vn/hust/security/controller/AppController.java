@@ -16,7 +16,20 @@ public class AppController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping({"/", "/login"})
+	@GetMapping({"/", "/user/home"})
+	public String showHome(Principal principal) {
+		try {
+			if(principal.getName().isEmpty()) {
+				return "login";
+			}else {
+				return "user";
+			}
+		} catch (Exception e) {
+			return "login";
+		}
+	}
+	
+	@GetMapping("/login")
 	public String showLogin() {
 		return "login";
 	}
@@ -34,10 +47,6 @@ public class AppController {
 		return "notification";
 	}
 	
-	@GetMapping("/user/home")
-	public String showUser() {
-		return "user";
-	}
 	
 	@GetMapping("/403")
 	public String showError() {
